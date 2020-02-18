@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d46c1d0-1802-4b19-ab0b-b59ad925d38f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SampleWebApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SampleWebApp.iml" afterDir="false" />
+    <list default="true" id="6d46c1d0-1802-4b19-ab0b-b59ad925d38f" name="Default Changelist" comment="update Dockerfile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,13 +67,25 @@
       <screen x="0" y="23" width="2048" height="1129" />
     </state>
     <state x="543" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2048.1129@0.23.2048.1129" timestamp="1582038899397" />
-    <state x="330" y="119" key="CommitChangelistDialog2" timestamp="1582041096751">
+    <state x="330" y="119" key="CommitChangelistDialog2" timestamp="1582041309514">
       <screen x="0" y="23" width="2048" height="1129" />
     </state>
-    <state x="330" y="119" key="CommitChangelistDialog2/0.23.2048.1129@0.23.2048.1129" timestamp="1582041096751" />
+    <state x="330" y="119" key="CommitChangelistDialog2/0.23.2048.1129@0.23.2048.1129" timestamp="1582041309514" />
+    <state x="405" y="256" key="Vcs.Push.Dialog.v2" timestamp="1582041340219">
+      <screen x="0" y="23" width="2048" height="1129" />
+    </state>
+    <state x="405" y="256" key="Vcs.Push.Dialog.v2/0.23.2048.1129@0.23.2048.1129" timestamp="1582041340219" />
+    <state x="516" y="257" key="VcsDiffUtil.ChangesDialog" timestamp="1582041324378">
+      <screen x="0" y="23" width="2048" height="1129" />
+    </state>
+    <state x="516" y="257" key="VcsDiffUtil.ChangesDialog/0.23.2048.1129@0.23.2048.1129" timestamp="1582041324378" />
     <state x="301" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1582036908085">
       <screen x="0" y="23" width="2048" height="1129" />
     </state>
     <state x="301" y="349" key="com.intellij.ide.util.TipDialog/0.23.2048.1129@0.23.2048.1129" timestamp="1582036908085" />
+    <state x="480" y="315" key="git4idea.merge.GitPullDialog" timestamp="1582041284851">
+      <screen x="0" y="23" width="2048" height="1129" />
+    </state>
+    <state x="480" y="315" key="git4idea.merge.GitPullDialog/0.23.2048.1129@0.23.2048.1129" timestamp="1582041284851" />
   </component>
 </project>
