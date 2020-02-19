@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d46c1d0-1802-4b19-ab0b-b59ad925d38f" name="Default Changelist" comment="update Dockerfile" />
+    <list default="true" id="6d46c1d0-1802-4b19-ab0b-b59ad925d38f" name="Default Changelist" comment="update Dockerfile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/.jsdtscope" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -10,13 +20,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="163">
+              <caret line="23" column="76" lean-forward="true" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -33,6 +47,66 @@
     <option name="height" value="777" />
   </component>
   <component name="ProjectId" id="1Xz770L8P8YE0IZxXZQjGxlroLr" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SampleWebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SampleWebApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SampleWebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SampleWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SampleWebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SampleWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SampleWebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SampleWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SampleWebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SampleWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SampleWebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SampleWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SampleWebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SampleWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="tomcat_env" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -85,12 +159,12 @@
       <option name="presentableId" value="Default" />
       <updated>1582036898209</updated>
       <workItem from="1582036903657" duration="3946000" />
-      <workItem from="1582078561590" duration="244000" />
+      <workItem from="1582078561590" duration="530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244000" />
+    <option name="totallyTimeSpent" value="530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="60" width="1402" height="777" extended-state="0" />
@@ -101,10 +175,10 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26617646" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26617646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.329927" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.329927" />
       <window_info anchor="bottom" id="Docker" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" />
@@ -165,8 +239,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="163">
+          <caret line="23" column="76" lean-forward="true" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
         </state>
       </provider>
     </entry>

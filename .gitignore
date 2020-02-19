@@ -112,3 +112,4 @@ fabric.properties
 tomcat_env/redis_lib/
 libraries/
 /.idea/libraries/**
+.settings/
