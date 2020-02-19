@@ -1,0 +1,7 @@
+container_commands:
+  copy-jars:
+    command: "cp .ebextensions/*.jar /usr/local/tomcat/lib/"
+  update-tomcat:
+    command: "cp .ebextensions/context.xml /usr/local/tomcat/conf/context.xml"
+  redisson-config:
+    command: "cp .ebextensions/redisson.conf /usr/local/tomcat/conf/redisson.conf"
