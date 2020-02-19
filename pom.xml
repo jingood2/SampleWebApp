@@ -47,6 +47,21 @@
          <target>1.7</target>
         </configuration>
        </plugin>
+       <!--
+       <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.2.3</version>
+            <configuration>
+                <webResources>
+                    <resource>
+                        <directory>.ebextentions</directory>
+                    </resource>
+                </webResources>
+            </configuration>
+        </plugin>
+        -->
+       <!--
        <plugin>
           <groupId>com.google.cloud.tools</groupId>
           <artifactId>jib-maven-plugin</artifactId>
@@ -70,14 +85,13 @@
                       <jvmFlag>-Xdebug</jvmFlag>
                       <jvmFlag>-Xmy:flag=jib-rules</jvmFlag>
                   </jvmFlags>
-                  <!--
                     For demonstration only: this directory in the base image contains a Tomcat default
                     app (welcome page), so you may first want to delete this directory in the base image.
-                  -->
                   <appRoot>/usr/local/tomcat/webapps/root</appRoot>
               </container>
           </configuration>
        </plugin>
+        -->
     </plugins>
  </build>
 
