@@ -1,6 +1,7 @@
 FROM tomcat:latest
 MAINTAINER hyunsukgo <hyunseokjung163@gmail.com>
 
+
 ENV REDIS_IP="0.tcp.ngrok.io" \
     REDIS_PORT=12358
 ENV REDISSON_ALL_URL https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=org.redisson&a=redisson-all&v=3.12.1&e=jar
@@ -13,3 +14,4 @@ COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
 
 WORKDIR /usr/local/tomcat/bin
 CMD ["catalina.sh", "run"]
+
