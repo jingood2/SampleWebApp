@@ -1,5 +1,5 @@
 FROM tomcat:latest
-MAINTAINER jingood2 <jingood2@sk.com>
+MAINTAINER hyunsukgo <hyunseokjung163@gmail.com>
 
 ENV REDIS_IP="0.tcp.ngrok.io" \
     REDIS_PORT=12358
