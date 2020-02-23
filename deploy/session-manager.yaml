@@ -1,0 +1,38 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: session-manager
+  labels:
+    app: session-cluster-demo
+spec:
+  ports:
+    - port: 6379
+      protocol: TCP
+      targetPort: 6379
+  selector:
+    app: session-cluster-demo
+    tier: database
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: session-manager
+  labels:
+    app: session-cluster-demo
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: session-cluster-demo
+        tier: database
+    spec:
+      containers:
+        - image: redis:5.0.7
+          name: session-manager
+          env:
+          ports:
+            - containerPort: 6379
+              name: SESSION_MANAGER_PORT

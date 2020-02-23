@@ -1,14 +1,54 @@
 version: 0.2
 
+env:
+  variables:
+    AWS_ACCOUNT_ID: "533616270150"
+    AWS_DEFAULT_REGION: "us-east-1"
+    IMAGE_REPO_NAME: "webapp-api"
+    EKS_KUBECTL_ROLE_ARN: "arn:aws:iam::533616270150:role/CodeBuildKubectlRole"
+    EKS_CLUSTER_NAME: "hol-jingood2"
+    NAMESPACE: "session-cluster-demo"
+    ENV: "staging"
 phases:
   install:
-    runtime-versions:
-      java: corretto11
+    commands:
+      - curl -sS -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator
+      - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+      - chmod +x ./kubectl ./aws-iam-authenticator
+      - mv ./kubectl /usr/local/bin/kubectl
+      - export PATH=$PWD/:$PATH
+      - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
+  pre_build:
+    commands:
+      - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - export KUBECONFIG=$HOME/.kube/config
+      - sed -i 's@CONTAINER_IMAGE@'"$REPOSITORY_URI:$IMAGE_TAG"'@' $IMAGE_REPO_NAME.yaml
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t $REPOSITORY_URI:latest .
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+
   post_build:
     commands:
-      - mvn package
-      - mv target/ROOT.war ROOT.war
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      #- docker push $REPOSITORY_URI:$TAG
+      - CREDENTIALS=$(aws sts assume-role --role-arn $EKS_KUBECTL_ROLE_ARN --role-session-name codebuild-kubectl --duration-seconds 900)
+      - export AWS_ACCESS_KEY_ID="$(echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId')"
+      - export AWS_SECRET_ACCESS_KEY="$(echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey')"
+      - export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
+      - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
+      - aws eks update-kubeconfig --name $EKS_CLUSTER_NAME
+      - ls -al
+      - kubectl apply -f $IMAGE_REPO_NAME.yaml -n $NAMESPACE
+      - printf '[{"name":"webapp-api","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > build.json
 artifacts:
-  files:
-    - ROOT.war
-    - .ebextensions/**/*
+  files: build.json

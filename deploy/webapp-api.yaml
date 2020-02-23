@@ -1,0 +1,49 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-api
+  labels:
+    app: session-cluster-demo
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: session-cluster-demo
+    tier: backend
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webapp-api
+  labels:
+    app: session-cluster-demo
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: webapp-api
+        tier: backend
+    spec:
+      containers:
+        #- image: 037729278610.dkr.ecr.ap-northeast-2.amazonaws.com/send-notification:latest
+        - image: CONTAINER_IMAGE
+          imagePullPolicy: Always
+          name: webapp-api
+          env:
+            - name: REDIS_IP
+              valueFrom:
+                secretKeyRef:
+                  name: demo-credentials
+                  key: host
+            - name: REDIS_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: demo-credentials
+                  key: port
+          ports:
+            - containerPort: 8080
