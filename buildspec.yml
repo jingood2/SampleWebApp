@@ -47,6 +47,7 @@ phases:
       - export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
       - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
       - aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --kubeconfig $KUBECONFIG
+      - aws sts get-caller-identity
       - kubectl get svc
       - kubectl apply -f $IMAGE_REPO_NAME.yaml -n $NAMESPACE
       - printf '[{"name":"webapp-api","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > build.json
