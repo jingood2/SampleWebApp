@@ -4,14 +4,14 @@ kind: Service
 metadata:
   name: webapp-api
   labels:
-    app: session-cluster-demo
+    app: webapp-api
 spec:
   ports:
     - port: 80
       protocol: TCP
       targetPort: 8080
   selector:
-    app: session-cluster-demo
+    app: webapp-api
     tier: backend
 ---
 apiVersion: extensions/v1beta1
@@ -19,8 +19,9 @@ kind: Deployment
 metadata:
   name: webapp-api
   labels:
-    app: session-cluster-demo
+    app: webapp-api
 spec:
+  replicas: 1
   strategy:
     type: Recreate
   template:
@@ -30,8 +31,8 @@ spec:
         tier: backend
     spec:
       containers:
-        #- image: 037729278610.dkr.ecr.ap-northeast-2.amazonaws.com/send-notification:latest
-        - image: CONTAINER_IMAGE
+        - image: 533616270150.dkr.ecr.us-east-1.amazonaws.com/webapp-api:latest
+          #- image: CONTAINER_IMAGE
           imagePullPolicy: Always
           name: webapp-api
           env:

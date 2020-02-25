@@ -7,10 +7,14 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-    - host: staging.jingood2.me.uk
+    - host: abb962fe4578b11ea974912285425fbf-dc5f59296c594dcb.elb.us-east-1.amazonaws.com
       http:
         paths:
-          - backend:
+          - path: /Test
+            backend:
               serviceName: webapp-api
               servicePort: 80
-            path: /
+          - path: /SessRepl
+            backend:
+              serviceName: webapp-api
+              servicePort: 80
