@@ -14,7 +14,6 @@ RUN curl -fsSL $REDISSON_ALL_URL -o /usr/local/tomcat/lib/redisson-all.jar
 RUN curl -fsSL $REDISSON_TOMCAT_URL -o /usr/local/tomcat/lib/redisson-tomcat.jar
 COPY tomcat_env/tomcat_conf /usr/local/tomcat/conf/
 COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
-COPY $lib/* /usr/local/tomcat/lib/
 
 WORKDIR /usr/local/tomcat/bin
 CMD ["catalina.sh", "run"]
