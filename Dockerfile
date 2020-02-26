@@ -1,4 +1,4 @@
-FROM tomcat:latest
+FROM tomcat:8-jre8
 MAINTAINER hyunsukgo <hyunseokjung163@gmail.com>
 
 ENV REDIS_IP="skcc-11st.a4w0c4.ng.0001.apn2.cache.amazonaws.com" \
