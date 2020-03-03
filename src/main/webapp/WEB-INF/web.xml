@@ -24,7 +24,9 @@
   <servlet-name><span style="text-decoration: underline;">mvc</span></servlet-name>
   <url-pattern>/</url-pattern>
  </servlet-mapping>
-
+ <session-config>
+<session-timeout>60</session-timeout>
+</session-config>
  <context-param>
   <param-name>contextConfigLocation</param-name>
   <param-value>/WEB-INF/view-resolver-servlet.xml</param-value>
