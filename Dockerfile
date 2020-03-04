@@ -1,5 +1,5 @@
-#FROM openjdk:8-jdk
-FROM tomcat:latest
+FROM openjdk:8-jdk
+#FROM tomcat:latest 이걸로 하면 Code Build 실패
 MAINTAINER hyunsukgo <hyunseokjung163@gmail.com>
 
 ENV REDIS_IP="skcc-11st-001.a4w0c4.0001.apn2.cache.amazonaws.com" \
